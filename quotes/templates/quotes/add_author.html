@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Author</title>
+    <link rel="stylesheet" href="{% static 'quotes/main.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Add Author</h2>
+        <form method="post" action="{% url 'add_author' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Author</button>
+        </form>
+        <p><a href="{% url 'index' %}">Back to Index</a></p>
+    </div>
+</body>
+</html>
