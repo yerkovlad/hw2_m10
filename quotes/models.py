@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Author(models.Model):
     name = models.CharField(max_length=100)
-    
+
     class Meta:
         app_label = 'quotes'
 
