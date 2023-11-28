@@ -5,6 +5,10 @@ from django.contrib.auth import login, logout
 from .forms import RegistrationForm, AuthorForm, QuoteForm
 from .models import Author, Quote
 
+def index(request):
+    quotes = Quote.objects.all()
+    return render(request, 'index.html', {'quotes': quotes})
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
